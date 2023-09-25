@@ -79,8 +79,7 @@ class TagAutoComplete(widgets.AdminTextInputWidget):
         """
         Returns the list of tags to auto-complete.
         """
-        return [tag.name for tag in
-                Tag.objects.usage_for_model(Entry)]
+        return [tag.name for tag in Tag.objects.all()]
 
     def render(self, name, value, attrs=None, renderer=None):
         """
